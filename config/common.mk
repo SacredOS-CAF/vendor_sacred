@@ -70,6 +70,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker
 
+# TCP Connection Management
+PRODUCT_PACKAGES += tcmiface
+PRODUCT_BOOT_JARS += tcmiface
+
 # Accents
 PRODUCT_PACKAGES += \
     Amber \
