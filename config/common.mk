@@ -74,6 +74,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += tcmiface
 PRODUCT_BOOT_JARS += tcmiface
 
+# Bluetooth Audio (A2DP)
+PRODUCT_PACKAGES += libbthost_if
+
 # Accents
 PRODUCT_PACKAGES += \
     Amber \
