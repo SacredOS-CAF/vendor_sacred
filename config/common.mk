@@ -107,9 +107,9 @@ PRODUCT_COPY_FILES += \
     vendor/sacred/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 endif
 
-# SacredOS-specific init file
-PRODUCT_COPY_FILES += \
-    vendor/sacred/prebuilt/common/etc/init.local.rc:root/init.sacred.rc
+# Copy all sacred-specific init rc files
+$(foreach f,$(wildcard vendor/sacred/prebuilt/common/etc/init/*.rc),\
+	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
