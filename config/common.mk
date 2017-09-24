@@ -184,9 +184,5 @@ PRODUCT_PACKAGES += \
 # Recommend using the non debug dexpreopter
 USE_DEX2OAT_DEBUG ?= false
 
-# Include SDCLANG definitions if it is requested and available
-ifeq ($(HOST_OS),linux)
-    ifneq ($(wildcard vendor/qcom/sdclang-4.0/),)
-        include vendor/sacred/sdclang/sdclang.mk
-    endif
-endif
+# Include SDCLANG definitions
+ include vendor/sacred/build/sdclang/sdclang.mk

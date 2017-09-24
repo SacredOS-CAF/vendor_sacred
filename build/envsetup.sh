@@ -55,3 +55,8 @@ function fixup_common_out_dir() {
         mkdir -p ${common_out_dir}
     fi
 }
+
+# SDClang Environment Variables
+export SDCLANG_AE_CONFIG=vendor/sacred/build/sdclang/sdclangAE.json
+export SDCLANG_CONFIG=vendor/sacred/build/sdclang/sdclang.json
+export SDCLANG_SA_ENABLED=false
