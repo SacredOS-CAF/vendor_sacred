@@ -24,6 +24,7 @@ PRODUCT_COPY_FILES += \
     vendor/sacred/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/sacred/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/sacred/prebuilt/common/bin/50-sacred.sh:system/addon.d/50-sacred.sh \
+    vendor/sacred/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
 
 # Bootanimation
 $(call inherit-product, vendor/sacred/config/bootanimation.mk)
