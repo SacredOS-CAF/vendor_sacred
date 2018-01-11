@@ -1,4 +1,4 @@
-# Copyright (C) 2017 AospExtended ROM
+# Copyright (C) 2018 SacredOS ROM
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,28 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#Extended Versioning
-EXTENDED_VERSION = v5.1
+#Sacred Versioning
+SACRED_VERSION = v0.1
 
-#ifndef EXTENDED_BUILD_TYPE
-    EXTENDED_BUILD_TYPE := BETA
+#ifndef SACRED_BUILD_TYPE
+    SACRED_BUILD_TYPE := ALPHA
 #endif
 
-ifeq ($(EXTENDED_BUILD_TYPE), OFFICIAL)
-
-# AEXOTA
-$(call inherit-product-if-exists, vendor/aosp/config/ota.mk)
-
-endif
-
-EXTENDED_MOD_VERSION := AospExtended-$(EXTENDED_VERSION)-$(shell date -u +%Y%m%d-%H%M)-$(EXTENDED_BUILD_TYPE)
+SACRED_MOD_VERSION := SacredOS-$(SACRED_VERSION)-$(shell date -u +%Y%m%d-%H%M)-$(SACRED_BUILD_TYPE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.extended.version=$(EXTENDED_VERSION) \
-  ro.extended.releasetype=$(EXTENDED_BUILD_TYPE) \
-  ro.modversion=$(EXTENDED_MOD_VERSION)
+  ro.sacred.version=$(SACRED_VERSION) \
+  ro.sacred.releasetype=$(SACRED_BUILD_TYPE) \
+  ro.modversion=$(SACRED_MOD_VERSION)
   
-EXTENDED_DISPLAY_VERSION := AospExtended-$(EXTENDED_VERSION)-$(EXTENDED_BUILD_TYPE)
+SACRED_DISPLAY_VERSION := SacredOS-$(SACRED_VERSION)-$(SACRED_BUILD_TYPE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.extended.display.version=$(EXTENDED_DISPLAY_VERSION)
+  ro.sacred.display.version=$(SACRED_DISPLAY_VERSION)

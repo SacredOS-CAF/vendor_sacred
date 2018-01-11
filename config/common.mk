@@ -1,4 +1,4 @@
-# Copyright (C) 2017 AospExtended
+# Copyright (C) 2017 SacredOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,26 +13,26 @@
 # limitations under the License.
 
 # include definitions for SDCLANG
-# include vendor/aosp/sdclang/sdclang.mk
+# include vendor/sacred/sdclang/sdclang.mk
 
- include vendor/aosp/config/version.mk
+ include vendor/sacred/config/version.mk
 
-PRODUCT_BRAND ?= AEX
+PRODUCT_BRAND ?= SACRED
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/aosp/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aosp/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
+    vendor/sacred/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/sacred/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/sacred/prebuilt/common/bin/50-sacred.sh:system/addon.d/50-sacred.sh \
 
 # Bootanimation
-$(call inherit-product, vendor/aosp/config/bootanimation.mk)
+$(call inherit-product, vendor/sacred/config/bootanimation.mk)
 
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/aosp/overlay/common \
-    vendor/aosp/overlay/dictionaries
+    vendor/sacred/overlay/common \
+    vendor/sacred/overlay/dictionaries
 
-# Custom AEX packages
+# Custom SacredOS packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
     LatinIME \
@@ -42,7 +42,6 @@ PRODUCT_PACKAGES += \
     Stk \
     Turbo \
     ViaBrowser \
-    AEXPapers \
     RetroMusicPlayer \
     WallpaperPickerGoogle
 
@@ -89,39 +88,39 @@ PRODUCT_PACKAGES += \
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/aosp/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    vendor/sacred/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
+    vendor/sacred/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
 
 # LatinIME gesture typing
 ifeq ($(TARGET_ARCH),arm64)
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
-    vendor/aosp/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
+    vendor/sacred/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
+    vendor/sacred/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
 else
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
-    vendor/aosp/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/sacred/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
+    vendor/sacred/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 endif
 
-# AEX-specific init file
+# SacredOS-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/init.local.rc:root/init.aosp.rc
+    vendor/sacred/prebuilt/common/etc/init.local.rc:root/init.sacred.rc
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
-    vendor/aosp/prebuilt/common/media/LMspeed_508.emd:system/media/LMspeed_508.emd \
-    vendor/aosp/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/sacred/prebuilt/common/media/LMspeed_508.emd:system/media/LMspeed_508.emd \
+    vendor/sacred/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+    vendor/sacred/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
 # Fix Dialer
 PRODUCT_COPY_FILES +=  \
-    vendor/aosp/prebuilt/common/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+    vendor/sacred/prebuilt/common/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -139,8 +138,8 @@ PRODUCT_PACKAGES += \
 
 # Charging sounds
 PRODUCT_COPY_FILES += \
-    vendor/aosp/google/effects/BatteryPlugged.ogg:system/media/audio/ui/BatteryPlugged.ogg \
-    vendor/aosp/google/effects/BatteryPlugged_48k.ogg:system/media/audio/ui/BatteryPlugged_48k.ogg
+    vendor/sacred/google/effects/BatteryPlugged.ogg:system/media/audio/ui/BatteryPlugged.ogg \
+    vendor/sacred/google/effects/BatteryPlugged_48k.ogg:system/media/audio/ui/BatteryPlugged_48k.ogg
 
 # DU Utils Library
 PRODUCT_PACKAGES += \
