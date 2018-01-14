@@ -160,3 +160,6 @@ PRODUCT_PACKAGES += \
 
 # Recommend using the non debug dexpreopter
 USE_DEX2OAT_DEBUG ?= false
+
+# ART changes
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD = false
