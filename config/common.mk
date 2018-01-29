@@ -40,6 +40,7 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
+    OmniStyle \
     Stk \
     Turbo \
     ViaBrowser \
