@@ -13,7 +13,7 @@
 # limitations under the License.
 
 #Sacred Versioning
-SACRED_VERSION = v1.0
+SACRED_VERSION = v1.1
 
 #ifndef SACRED_BUILD_TYPE
     SACRED_BUILD_TYPE := BETA
