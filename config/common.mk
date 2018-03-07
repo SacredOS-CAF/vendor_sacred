@@ -16,6 +16,7 @@
 # include vendor/sacred/sdclang/sdclang.mk
 
  include vendor/sacred/config/version.mk
+ include vendor/sacred/config/art.mk
 
 PRODUCT_BRAND ?= SACRED
 
@@ -165,12 +166,3 @@ PRODUCT_PACKAGES += \
 
 # Recommend using the non debug dexpreopter
 USE_DEX2OAT_DEBUG ?= false
-
-# ART changes
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD = false
-
-# ART NoDebug
-export ART_BUILD_TARGET_NDEBUG := true
-export ART_BUILD_TARGET_DEBUG := false
-export ART_BUILD_HOST_NDEBUG := true
-export ART_BUILD_HOST_DEBUG := false
