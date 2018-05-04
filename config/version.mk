@@ -20,13 +20,10 @@ SACRED_VERSION = v1.1
 #endif
 
 SACRED_MOD_VERSION := SacredOS-$(SACRED_VERSION)-$(shell date -u +%Y%m%d-%H%M)-$(SACRED_BUILD_TYPE)
-
-PRODUCT_PROPERTY_OVERRIDES += \
-  ro.sacred.version=$(SACRED_VERSION) \
-  ro.sacred.releasetype=$(SACRED_BUILD_TYPE) \
-  ro.modversion=$(SACRED_MOD_VERSION)
-
 SACRED_DISPLAY_VERSION := SacredOS-$(SACRED_VERSION)-$(SACRED_BUILD_TYPE)
 
-PRODUCT_PROPERTY_OVERRIDES += \
+CUSTOM_PROPERTIES := \
+  ro.sacred.version=$(SACRED_VERSION) \
+  ro.sacred.releasetype=$(SACRED_BUILD_TYPE) \
+  ro.modversion=$(SACRED_MOD_VERSION) \
   ro.sacred.display.version=$(SACRED_DISPLAY_VERSION)
