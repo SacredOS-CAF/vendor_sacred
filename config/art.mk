@@ -13,7 +13,7 @@ PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 
 # Create profile for boot image
 # Outputs to /system/etc/boot-image.prof
-PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
+#PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 
 # Speed apps
 PRODUCT_DEXPREOPT_SPEED_APPS += \
