@@ -33,7 +33,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Custom SacredOS packages
 PRODUCT_PACKAGES += \
-    BluetoothExt \
     LatinIME \
     Launcher3 \
     LiveWallpapers \
