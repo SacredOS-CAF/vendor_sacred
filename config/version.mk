@@ -13,10 +13,10 @@
 # limitations under the License.
 
 #Sacred Versioning
-SACRED_VERSION = v1.1
+SACRED_VERSION = v1.4
 
 #ifndef SACRED_BUILD_TYPE
-    SACRED_BUILD_TYPE := BETA
+    SACRED_BUILD_TYPE := STABLE
 #endif
 
 SACRED_MOD_VERSION := SacredOS-$(SACRED_VERSION)-$(shell date -u +%Y%m%d-%H%M)-$(SACRED_BUILD_TYPE)
