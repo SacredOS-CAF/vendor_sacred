@@ -70,6 +70,7 @@ type ProductVariables struct {
 	BoardUsesQCOMHardware  *bool `json:",omitempty"`
 	TargetUsesQCOMBsp  *bool `json:",omitempty"`
 	TargetUsesQCOMLegacyBsp  *bool `json:",omitempty"`
+	Java_Source_Overlays *string `json:",omitempty"`
 	BoardUsesLegacyAlsa  *bool `json:",omitempty"`
 	Cant_reallocate_omx_buffers *bool `json:",omitempty"`
 	Target_shim_libs  *string `json:",omitempty"`
