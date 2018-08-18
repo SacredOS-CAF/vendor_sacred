@@ -21,15 +21,14 @@ PRODUCT_BRAND ?= SACRED
 PRODUCT_COPY_FILES += \
     vendor/sacred/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/sacred/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/sacred/prebuilt/common/bin/50-sacred.sh:system/addon.d/50-sacred.sh \
-    vendor/sacred/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
+    vendor/sacred/prebuilt/common/bin/50-sacred.sh:system/addon.d/50-sacred.sh
 
 # Bootanimation
 $(call inherit-product, vendor/sacred/config/bootanimation.mk)
 
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/sacred/overlay/common \
-    vendor/sacred/overlay/dictionaries
+    vendor/sacred/overlay/common
+#    vendor/sacred/overlay/dictionaries
 
 # Custom SacredOS packages
 PRODUCT_PACKAGES += \
@@ -37,12 +36,7 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
-    OmniStyle \
-    Stk \
-    Turbo \
-    ViaBrowser \
-    RetroMusicPlayer \
-    WallpaperPickerGoogle
+    Stk
 
 # Textclassifiers
 PRODUCT_PACKAGES += \
@@ -59,45 +53,41 @@ PRODUCT_PACKAGES += \
     textclassifier.smartselection.zh-Hant.model
 
 # Themes
-PRODUCT_PACKAGES += \
-    DeepPurpleTheme \
-    IndigoTheme \
-    PinkTheme \
-    PurpleTheme \
-    RedTheme \
-    SkyBlueTheme \
-    YellowTheme \
-    PixelTheme \
-    Stock
+#PRODUCT_PACKAGES += \
+#    DeepPurpleTheme \
+#    IndigoTheme \
+#    PinkTheme \
+#    PurpleTheme \
+#    RedTheme \
+#    SkyBlueTheme \
+#    YellowTheme \
+#    PixelTheme \
+#    Stock
 
 # Extra tools
-PRODUCT_PACKAGES += \
-    e2fsck \
-    mke2fs \
-    tune2fs \
-    mount.exfat \
-    fsck.exfat \
-    mkfs.exfat \
-    mkfs.f2fs \
-    fsck.f2fs \
-    fibmap.f2fs \
-    mkfs.ntfs \
-    fsck.ntfs \
-    mount.ntfs \
-    7z \
-    bzip2 \
-    curl \
-    lib7z \
-    powertop \
-    pigz \
-    tinymix \
-    unrar \
-    unzip \
-    zip
-
-# Exchange support
-PRODUCT_PACKAGES += \
-    Exchange2
+#PRODUCT_PACKAGES += \
+#    e2fsck \
+#    mke2fs \
+#    tune2fs \
+#    mount.exfat \
+#    fsck.exfat \
+#    mkfs.exfat \
+#    mkfs.f2fs \
+#    fsck.f2fs \
+#    fibmap.f2fs \
+#    mkfs.ntfs \
+#    fsck.ntfs \
+#    mount.ntfs \
+#    7z \
+#    bzip2 \
+#    curl \
+#    lib7z \
+#    powertop \
+#    pigz \
+#    tinymix \
+#    unrar \
+#    unzip \
+#    zip
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
@@ -132,8 +122,8 @@ PRODUCT_COPY_FILES += \
     vendor/sacred/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
 # Fix Dialer
-PRODUCT_COPY_FILES +=  \
-    vendor/sacred/prebuilt/common/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+#PRODUCT_COPY_FILES +=  \
+#    vendor/sacred/prebuilt/common/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -148,16 +138,16 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
 
 # Charging sounds
-PRODUCT_COPY_FILES += \
-    vendor/sacred/google/effects/BatteryPlugged.ogg:system/media/audio/ui/BatteryPlugged.ogg \
-    vendor/sacred/google/effects/BatteryPlugged_48k.ogg:system/media/audio/ui/BatteryPlugged_48k.ogg
+#PRODUCT_COPY_FILES += \
+#    vendor/sacred/google/effects/BatteryPlugged.ogg:system/media/audio/ui/BatteryPlugged.ogg \
+#    vendor/sacred/google/effects/BatteryPlugged_48k.ogg:system/media/audio/ui/BatteryPlugged_48k.ogg
 
 # DU Utils Library
-PRODUCT_PACKAGES += \
-    org.dirtyunicorns.utils
+#PRODUCT_PACKAGES += \
+#    org.dirtyunicorns.utils
 
-PRODUCT_BOOT_JARS += \
-    org.dirtyunicorns.utils
+#PRODUCT_BOOT_JARS += \
+#    org.dirtyunicorns.utils
 
 # Needed by some RILs and for some gApps packages
 PRODUCT_PACKAGES += \

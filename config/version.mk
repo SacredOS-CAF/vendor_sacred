@@ -13,17 +13,17 @@
 # limitations under the License.
 
 #Sacred Versioning
-SACRED_VERSION = v1.4
+SACRED_VERSION = v1.5.1
 
 #ifndef SACRED_BUILD_TYPE
-    SACRED_BUILD_TYPE := STABLE
+    SACRED_BUILD_TYPE := ALPHA
 #endif
 
-SACRED_MOD_VERSION := SacredOS-$(SACRED_VERSION)-$(shell date -u +%Y%m%d-%H%M)-$(SACRED_BUILD_TYPE)
-SACRED_DISPLAY_VERSION := SacredOS-$(SACRED_VERSION)-$(SACRED_BUILD_TYPE)
+SACRED_DISPLAY_VERSION := SacredOS-$(SACRED_VERSION)-$(shell date -u +%Y%m%d-%H%M)-$(SACRED_BUILD_TYPE)
+SACRED_MOD_VERSION := SacredOS-$(SACRED_VERSION)-$(SACRED_BUILD_TYPE)
 
 CUSTOM_PROPERTIES := \
   ro.sacred.version=$(SACRED_VERSION) \
   ro.sacred.releasetype=$(SACRED_BUILD_TYPE) \
-  ro.modversion=$(SACRED_MOD_VERSION) \
-  ro.sacred.display.version=$(SACRED_DISPLAY_VERSION)
+  ro.sacred.display.version=$(SACRED_DISPLAY_VERSION) \
+  ro.sacred.modversion=$(SACRED_MOD_VERSION)
