@@ -26,6 +26,10 @@ PRODUCT_COPY_FILES += \
 # Bootanimation
 $(call inherit-product, vendor/sacred/config/bootanimation.mk)
 
+# Clean cache
+PRODUCT_COPY_FILES += \
+    vendor/sacred/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
+
 DEVICE_PACKAGE_OVERLAYS += \
     vendor/sacred/overlay/common
 #    vendor/sacred/overlay/dictionaries
