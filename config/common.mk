@@ -77,6 +77,10 @@ PRODUCT_BOOT_JARS += tcmiface
 # Bluetooth Audio (A2DP)
 PRODUCT_PACKAGES += libbthost_if
 
+# MSIM manual provisioning
+PRODUCT_PACKAGES += telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
+
 # Accents
 PRODUCT_PACKAGES += \
     Amber \
