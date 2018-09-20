@@ -61,6 +61,28 @@ PRODUCT_PACKAGES += \
     textclassifier.smartselection.zh.model \
     textclassifier.smartselection.zh-Hant.model
 
+# Accents
+PRODUCT_PACKAGES += \
+    Amber \
+    Blue \
+    BlueGrey \
+    Brown \
+    Cyan \
+    DeepOrange \
+    DeepPurple \
+    Green \
+    Grey \
+    Indigo \
+    LightBlue \
+    LightGreen \
+    Lime \
+    Orange \
+    Pink \
+    Purple \
+    Red \
+    Teal \
+    Yellow
+
 # Themes
 PRODUCT_PACKAGES += \
     SystemDarkTheme \
