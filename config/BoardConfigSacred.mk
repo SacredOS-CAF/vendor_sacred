@@ -10,3 +10,6 @@ include vendor/sacred/config/BoardConfigQcom.mk
 endif
 
 include vendor/sacred/config/BoardConfigSoong.mk
+
+# Disable qmi EAP-SIM security
+DISABLE_EAP_PROXY := true
