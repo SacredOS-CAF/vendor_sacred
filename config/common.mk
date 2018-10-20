@@ -62,16 +62,13 @@ PRODUCT_PACKAGES += \
     textclassifier.smartselection.zh-Hant.model
 
 # Themes
-#PRODUCT_PACKAGES += \
-#    DeepPurpleTheme \
-#    IndigoTheme \
-#    PinkTheme \
-#    PurpleTheme \
-#    RedTheme \
-#    SkyBlueTheme \
-#    YellowTheme \
-#    PixelTheme \
-#    Stock
+PRODUCT_PACKAGES += \
+    SystemDarkTheme \
+    SettingsDarkTheme \
+    SystemUIDarkTheme \
+    SystemBlackTheme \
+    SettingsBlackTheme \
+    SystemUIBlackTheme
 
 # Extra tools
 #PRODUCT_PACKAGES += \
