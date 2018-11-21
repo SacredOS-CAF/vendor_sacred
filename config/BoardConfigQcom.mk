@@ -80,6 +80,6 @@ endif
 endif
 
 PRODUCT_SOONG_NAMESPACES += \
-    hardware/qcom/audio-caf/$(QCOM_HARDWARE_VARIANT) \
-    hardware/qcom/display-caf/$(QCOM_HARDWARE_VARIANT) \
-    hardware/qcom/media-caf/$(QCOM_HARDWARE_VARIANT)
+    hardware/qcom/audio/$(QCOM_HARDWARE_VARIANT) \
+    hardware/qcom/display/$(QCOM_HARDWARE_VARIANT) \
+    hardware/qcom/media/$(QCOM_HARDWARE_VARIANT)
