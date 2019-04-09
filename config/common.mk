@@ -38,11 +38,6 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     Stk
 
-# Turbo
-PRODUCT_PACKAGES += \
-    Turbo \
-    turbo.xml
-
 # Textclassifiers
 PRODUCT_PACKAGES += \
     textclassifier.langid.model \
