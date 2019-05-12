@@ -17,6 +17,36 @@
 
 PRODUCT_BRAND ?= SACRED
 
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    keyguard.no_require_sim=true \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+    ro.com.android.wifi-watchlist=GoogleGuest \
+    ro.setupwizard.mode=OPTIONAL \
+    ro.com.android.dateformat=MM-dd-yyyy \
+    ro.com.android.dataroaming=false \
+    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
+    ro.setupwizard.rotation_locked=true \
+    ro.opa.eligible_device=true\
+    persist.sys.dun.override=0 \
+    ro.storage_manager.enabled=true \
+    persist.sys.recovery_update=false \
+    persist.sys.disable_rescue=true
+
+# Sensitive Phone Numbers list
+PRODUCT_COPY_FILES += \
+    vendor/sacred/prebuilt/common/etc/sensitive_pn.xml:system/etc/sensitive_pn.xml
+
+# World APN list
+PRODUCT_COPY_FILES += \
+    vendor/sacred/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+
+# Telephony packages
+PRODUCT_PACKAGES += \
+    messaging \
+    Stk \
+    CellBroadcastReceiver
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/sacred/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
@@ -35,33 +65,10 @@ $(call inherit-product, vendor/sacred/config/bootanimation.mk)
 
 DEVICE_PACKAGE_OVERLAYS += \
     vendor/sacred/overlay/common
-#    vendor/sacred/overlay/dictionaries
 
-# Custom SacredOS packages
+# Additional packages
 PRODUCT_PACKAGES += \
-    LatinIME \
-    Launcher3 \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    Stk
-
-# Textclassifiers
-PRODUCT_PACKAGES += \
-    textclassifier.langid.model \
-    textclassifier.bundle1 \
-    textclassifier.ar.model \
-    textclassifier.en.model \
-    textclassifier.es.model \
-    textclassifier.fr.model \
-    textclassifier.it.model \
-    textclassifier.nl.model \
-    textclassifier.pl.model \
-    textclassifier.pt.model \
-    textclassifier.ru.model \
-    textclassifier.tr.model \
-    textclassifier.universal.model \
-    textclassifier.zh.model \
-    textclassifier.zh-Hant.model
+    LiveWallpapersPicker
 
 # Accents
 PRODUCT_PACKAGES += \
@@ -94,49 +101,9 @@ PRODUCT_PACKAGES += \
     SettingsBlackTheme \
     SystemUIBlackTheme
 
-# Extra tools
-#PRODUCT_PACKAGES += \
-#    e2fsck \
-#    mke2fs \
-#    tune2fs \
-#    mount.exfat \
-#    fsck.exfat \
-#    mkfs.exfat \
-#    mkfs.f2fs \
-#    fsck.f2fs \
-#    fibmap.f2fs \
-#    mkfs.ntfs \
-#    fsck.ntfs \
-#    mount.ntfs \
-#    7z \
-#    bzip2 \
-#    curl \
-#    lib7z \
-#    powertop \
-#    pigz \
-#    tinymix \
-#    unrar \
-#    unzip \
-#    zip
-
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
     vendor/sacred/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
-
-# init.d support
-PRODUCT_COPY_FILES += \
-    vendor/sacred/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
-
-# LatinIME gesture typing
-ifeq ($(TARGET_ARCH),arm64)
-PRODUCT_COPY_FILES += \
-    vendor/sacred/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
-    vendor/sacred/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
-else
-PRODUCT_COPY_FILES += \
-    vendor/sacred/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
-    vendor/sacred/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
-endif
 
 # Copy all sacred-specific init rc files
 $(foreach f,$(wildcard vendor/sacred/prebuilt/common/etc/init/*.rc),\
@@ -150,10 +117,6 @@ PRODUCT_COPY_FILES +=  \
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
     vendor/sacred/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
-
-# Fix Dialer
-#PRODUCT_COPY_FILES +=  \
-#    vendor/sacred/prebuilt/common/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -171,18 +134,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 #PRODUCT_COPY_FILES += \
 #    vendor/sacred/google/effects/BatteryPlugged.ogg:system/media/audio/ui/BatteryPlugged.ogg \
 #    vendor/sacred/google/effects/BatteryPlugged_48k.ogg:system/media/audio/ui/BatteryPlugged_48k.ogg
-
-# DU Utils Library
-#PRODUCT_PACKAGES += \
-#    org.dirtyunicorns.utils
-
-#PRODUCT_BOOT_JARS += \
-#    org.dirtyunicorns.utils
-
-# Needed by some RILs and for some gApps packages
-PRODUCT_PACKAGES += \
-    librsjni \
-    libprotobuf-cpp-full
 
 # Charger images
 PRODUCT_PACKAGES += \
