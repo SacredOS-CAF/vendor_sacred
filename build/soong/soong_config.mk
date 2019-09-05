@@ -1,6 +1,6 @@
 add_json_str_omitempty = $(if $(strip $(2)),$(call add_json_str, $(1), $(2)))
 
-_contents := $(_contents)    "Sacred":{$(newline)
+_json_contents := $(_json_contents)    "Sacred":{$(newline)
 
 $(call add_json_bool, Uses_generic_camera_parameter_library, $(if $(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY),,true))
 $(call add_json_bool, Needs_text_relocations, $(filter true,$(TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS)))
@@ -29,6 +29,6 @@ $(call add_json_str, QCOMMediaPath, $(call project-path-for,qcom-media))
 $(call add_json_str, QCOMSensorsPath, $(call project-path-for,qcom-sensors))
 
 # This causes the build system to strip out the last comma in our nested struct, to keep the JSON valid.
-_contents := $(_contents)__SV_END
+_json_contents := $(_json_contents)__SV_END
 
-_contents := $(_contents)    },$(newline)
+_json_contents := $(_json_contents)    },$(newline)
