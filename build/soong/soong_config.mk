@@ -18,6 +18,7 @@ $(call add_json_str, Specific_camera_parameter_library, $(TARGET_SPECIFIC_CAMERA
 $(call add_json_str, BTVendorPath, $(call project-path-for,bt-vendor))
 $(call add_json_str, RILPath, $(call project-path-for,ril))
 $(call add_json_str, WLANPath, $(call project-path-for,wlan))
+$(call add_json_str_omitempty, Target_init_vendor_lib, $(TARGET_INIT_VENDOR_LIB))
 $(call add_json_str_omitempty, Target_shim_libs, $(subst $(space),:,$(TARGET_LD_SHIM_LIBS)))
 $(call add_json_str, Java_Source_Overlays, $(JAVA_SOURCE_OVERLAYS))
 $(call add_json_str, QCOMAudioPath, $(call project-path-for,qcom-audio))
